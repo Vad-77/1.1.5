@@ -1,16 +1,18 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
+
+
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        UserService us = new UserServiceImpl(new UserDaoJDBCImpl());
+        UserService us = new UserServiceImpl(new UserDaoHibernateImpl());
         us.createUsersTable();
         us.saveUser("Влад", "Филипов", (byte) 12);
         System.out.println("User с именем – Влад добавлен в базу данных");
@@ -21,7 +23,9 @@ public class Main {
         us.saveUser("Савелий", "Савельев", (byte) 15);
         System.out.println("User с именем – Савелий добавлен в базу данных");
         List<User> userList = us.getAllUsers();
-        System.out.println(userList);
+        for (User a : userList) {
+            System.out.println(userList);
+        }
         us.cleanUsersTable();
         us.dropUsersTable();
     }
