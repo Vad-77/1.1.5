@@ -40,7 +40,7 @@ public class Util {
 
                     Properties settings = new Properties();
                     settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                    settings.put(Environment.URL, "jdbc:mysql://localhost/vvv");
+                    settings.put(Environment.URL, "jdbc:mysql://localhost/jdbc");
                     settings.put(Environment.USER, "root");
                     settings.put(Environment.PASS, "Kata2023!!");
                     settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");

@@ -12,7 +12,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        UserService us = new UserServiceImpl(new UserDaoHibernateImpl());
+        UserService us = new UserServiceImpl();
         us.createUsersTable();
         us.saveUser("Влад", "Филипов", (byte) 12);
         System.out.println("User с именем – Влад добавлен в базу данных");
